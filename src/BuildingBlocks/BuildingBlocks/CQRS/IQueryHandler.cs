@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace BuildingBlocks.CQRS
 {
+    //Restituisce sempre un risultato
     public interface IQueryHandler<in TQuery, TResponse>
-      : IRequestHandler<TQuery, TResponse>
-      where TQuery : IQuery<TResponse>
-      where TResponse : notnull
+                                      : IRequestHandler<TQuery, TResponse>
+                                              where TQuery : IQuery<TResponse>
+                                              where TResponse : notnull
     {
     }
 }
